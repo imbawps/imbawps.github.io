@@ -1,43 +1,303 @@
-<!DOCTYPE html>
-<html>
-<style>
-body{
-   background-color:rgb(300,250,200);
-}
-#advantages {
-    color:blue;
-}
-#harms {
-    color:red;
-}
-.internet {
-    color:red;
-}
-.isolation{
-border:2px solid orange;
-background-color:white;
-}
-.world{
-border:2px solid green;
-background-color:white;
-}
-ul li strong{
-line-height:2em;
-}
-.frame{
-border:10px ridge rgb(150,0,0);
-}
-</style>
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-<body>
-<h1>The <strong class="Lincoln">Lincoln</strong> Park</h1>
-<img class="frame" src="https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/59/2017/07/22121200/021517-165046_lp7logo.png" alt="linkin park" width="400">
-<p>Lnkin Park is an American rock band from Agoura Hills, California. Formed in 1996, <em>the band rose to international fame with</em>their debut album Hybrid Theory<strong>(2000)</strong>,which was certified Diamond bythe RIAA in 2005, and<em>multi-Platinum</em> in <em>several several other countries.</em>.<br>
-<a target="_blank" href="https://imbawps.github.io/indexl1.html">Musical style and influences</a></p>
-<h2 id="advantages">History</h2>
-<ul>
-<li><strong><strong class="world">1996–2000: </strong>Early years</strong></li>
-<li><strong><strong class="world">2000–2002: </strong>Hybrid Theory and Reanimation</strong></li>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* end of reset */
+
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+
+@font-face {
+    font-family: 'kalambold';
+    src: url('../fonts/kalam-bold-webfont.woff2') format('woff2'),
+         url('../fonts/kalam-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kalamlight';
+    src: url('../fonts/kalam-light-webfont.woff2') format('woff2'),
+         url('../fonts/kalam-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kalamregular';
+    src: url('../fonts/kalam-regular-webfont.woff2') format('woff2'),
+         url('../fonts/kalam-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-----------------------structure-----------------------*/
+html{
+  background-color: peachpuff;
+  background-image: url(../images/11.jpg);
+  background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+}
+
+/*p,h1 {
+  color:green;
+}
+.italic{
+  font-style: italic;
+}
+#normal{
+  font-style: normal;
+}
+aside p{
+  color: purple !important;
+  font-family: arial;
+}
+aside p{
+  color: orange;
+}
+aside h2{
+  font-size: 100px;
+}
+*/
+body {
+  font-family: georgia, serif;
+  font-family: 'Gaegu', cursive;
+	color: rgb(34,56,125);
+}
+
+div#page-wrap{
+	width: 960px;
+  margin: 50px auto;
+	/*outline:3px solid purple;*/
+}
+
+main{
+	width:60%;
+	/*outline: 1px solid red;*/
+	float: right;
+	margin-left: 2.5%;
+}
+
+aside{
+	/*outline: 1px solid blue;*/
+	width: 34%;
+	float:left;
+	/*margin-right: 2.5%;*/
+	border-right: 1px dotted rgb(34,56,125);
+	padding-right: 2.5%;
+	text-align: center;
+
+}
+
+aside img{
+	width: 50%;
+	margin-bottom: 7px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+
+aside section{
+	border-bottom: 1px solid black;
+	margin-bottom: 5px
+}
+
+aside section:last-child{
+	border-bottom: none;
+	margin-bottom: none;
+}
+
+nav{
+	/*outline: 1px solid black;*/
+	font-family: 'kalamregular', cursive;
+	text-transform: uppercase;
+	/*margin-bottom: 30px;*/
+	height: 30px;
+	width: 75%;
+	margin: 0 auto 30px auto;
+	text-align: center;
+}
+
+nav ul li{
+	float: left;
+	width: 18%;
+	text-align: center;
+	border-right: 1px solid red;
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+	background-color: red;
+}
+
+nav ul li:last-child{
+	border-right: none;
+}
+
+nav ul li a{
+	display: block;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'kalamregular', cursive;
+  margin-bottom: 10px;
+	/*color: rgb(34,56,125);*/
+	color:#5e363e;
+	clear: both;
+}
+
+aside h3{
+	margin-bottom: 0px;
+}
+.a {
+	font-style: italic;
+}
+
+
+h1{
+  font-size: 5em;
+}
+h2{
+  font-size: 2em;
+	margin-top: 20px;
+}
+aside h2{
+  font-size: 1.5em;
+}
+h3{
+  font-size: 1.3em;
+}
+
+h4{
+	font-size: 1.5em;
+}
+
+p{
+  margin-bottom: 15px;
+}
+
+a{
+	color:white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover{
+	color:#E6E6FA;
+	text-decoration: underline;
+}
+a:active{
+	color: #C0C0C0;
+}
+
+header{
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	height: 100px;
+	/*opacity: 0.5;*/
+	width: 100%;
+}
+header h1{
+	line-height: 100px;
+	color: white;
+}
+
+main figure img{
+width: 100%;
+}
+
+main figcaption{
+	margin: 15px 0;
+}
+
+main figure.a{
+	float: right;
+	width: 40%;
+	margin: 0 0 15px 30px;
+}
+
+footer{
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0,0,0,0.2);
+	padding: 30px;
+}
+
+footer p a {
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	font-style: italic;
+}
+
+.icon{
+	margin-right: 15px;
+}
+
+.icon:last-child{
+	margin-right: 0;
+}
+aside section h3 span {
+	color: lightblue;
+}
 <li><strong><strong class="world">2002–2004: </strong>Meteora</strong></li>
 <li><strong><strong class="world">2004–2006: </strong>Side projects</strong></li>
 <li><strong> <strong class="world">2006–2008: </strong>Minutes to Midnight</strong></li>
